@@ -5,7 +5,6 @@ class Nodo:
         self.der = der
     
 class Principal():
-    #nodo = Nodo()
     def buscar(self, arbol, valor):
         if arbol == None:
             return False
@@ -34,7 +33,7 @@ def main():
     arbol = Nodo(25, Nodo(18, Nodo(10), Nodo(20)), Nodo(50, Nodo(40)))
     clas = Principal()
     clas.insertar(arbol, 45)
-    print(clas.a_lista(arbol))
+    print(clas.a_lista(clas.insertar(arbol, 45)))
     
 
 if __name__ == '__main__':
