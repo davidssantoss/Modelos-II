@@ -1,40 +1,38 @@
 class Nodo:
-    def __init__(self, valor, izq = None, der = None):
+    def __init__(self, valor, izquierda = None, derecha = None):
         self.valor = valor
-        self.izq = izq
-        self.der = der
-    
-class Principal():
-    def buscar(self, arbol, valor):
+        self.izquierda = izquierda
+        self.derecha = derecha    
+
+def buscar(arbol, valor):
         if arbol == None:
             return False
-        if arbol.valor == valor:
+        elif arbol.valor == valor:
             return True
-        if arbol.valor > valor:
-            return self.buscar(arbol.izq, valor)
-        return self.buscar(arbol.der, valor)
+        elif valor > arbol.valor:
+            return buscar(arbol.derecha, valor)
+        else:
+            return buscar(arbol.izquierda, valor)
 
-    def a_lista(self, arbol):
+def aLista(arbol):
         if arbol == None:
             return []
-        return self.a_lista(arbol.izq) + [arbol.valor] + self.a_lista(arbol.der)
+        return aLista(arbol.izquierda) + [arbol.valor] + aLista(arbol.derecha)
 
-    def insertar(self, arbol, valor):
-        if (arbol == None):
+def insertarValor(arbol, valor):
+        if arbol == None:
             return Nodo(valor)
-        if arbol.valor > valor:
-            return Nodo(arbol.valor, self.insertar(arbol.izq, valor), arbol.der)                        
-        return Nodo(arbol.valor, arbol.izq, self.insertar(arbol.der, valor))
-    
-    def a_arbol(self, lista):
-        return Nodo(lista[0], a_arbol())
-    
-def main():
-    arbol = Nodo(25, Nodo(18, Nodo(10), Nodo(20)), Nodo(50, Nodo(40)))
-    clas = Principal()
-    clas.insertar(arbol, 45)
-    print(clas.a_lista(clas.insertar(arbol, 45)))
-    
+        elif valor > arbol.valor:
+            return Nodo(arbol.valor, arbol.izquierda, insertarValor(arbol.derecha, valor))                        
+        else:
+            return Nodo(arbol.valor, insertarValor(arbol.izquierda, valor), arbol.derecha)
 
-if __name__ == '__main__':
-    main()
+def insertarLista(arbol, lista):
+        if (lista == []):
+            return arbol
+        elif (lista [1:] == []):
+            return insertarValor(arbol, lista[0])
+        else:
+            return insertarLista(insertarValor(arbol, lista[0]), lista[1:])     
+
+print(aLista(insertarLista(Nodo(25, Nodo(18, Nodo(10), Nodo(20))), [11, 45,49,51])))
