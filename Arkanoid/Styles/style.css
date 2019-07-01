@@ -1,0 +1,14 @@
+body {
+	background-color:#000000;
+	background:#000000 url('../Images/fondo.png') no-repeat right center;
+	text-align: center;
+}
+
+canvas {
+	background:url('../Images/ArkanoidFondo.png');
+	color:#eeeeee;
+	border:2px solid;
+	border-color:#eeeeee;
+    display: block;
+    margin: 0 auto;
+}
