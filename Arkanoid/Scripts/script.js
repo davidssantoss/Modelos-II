@@ -33,6 +33,9 @@ function capturaTeclado(event){
 		
 
 }
+function reload() {
+    document.location.reload()
+}
 
 function run(){
     buffer.width = myCanvas.width;
@@ -54,8 +57,12 @@ function run(){
                     ball.changeColor();
                     ball.brickDestroy();
                     if(ball.getScore() == brickRowCount*brickColumnCount) {
-                        alert("YOU WIN, CONGRATULATIONS!");
-                        document.location.reload();
+                        ctxBuffer.font="36pt Montserrat";
+                        ctxBuffer.strokeStyle="white";
+                        ctxBuffer.strokeText("Has ganado!!", 125,150);
+                        ctxBuffer.fillStyle = "white";
+						ctxBuffer.fillText("Vuelve a jugar dando clic al boton", 125,200, 200);
+                        playing = false;
                     }
                 }
             }
@@ -82,8 +89,13 @@ function run(){
                     this.dx = 2;
                     this.dy = -2;
                 }else {
-                    alert("GAME OVER");
-                    document.location.reload();
+                    ctxBuffer.strokeStyle="white";
+                    ctxBuffer.font="36pt Montserrat";
+                    ctxBuffer.strokeText("Has perdido!", 125,150);
+                    ctxBuffer.fillStyle = "white";                    
+					ctxBuffer.fillText("Vuelve a jugar dando clic al boton", 125,200, 200);
+                    playing = false;
+
                 }
             }
         }
