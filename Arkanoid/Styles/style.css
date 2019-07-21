@@ -1,7 +1,7 @@
-html {
+body {
 	background-color:#000000;
-	background:#000000 url('../Images/fondo3.jpg') no-repeat right center;
 	background-size: cover;
+	background:#000000 url('../Images/fondo3.jpg') no-repeat right center;
 	text-align: center;
 }
 
