@@ -26,4 +26,8 @@ function Paddle(canvas){
     this.getPaddleWidth = function(){
         return this.paddleWidth;
     }
+
+    this.setPaddleX = function(X){
+        this.paddleX = X;
+    }
 }

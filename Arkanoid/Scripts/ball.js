@@ -22,12 +22,12 @@ function Ball(){
     }
 
     this.drawScore = function(ctx){
-        ctx.font = "16px ComicSansMS";
+        ctx.font = "18px Bangers";
         ctx.fillStyle = "#FFFFFF";
         ctx.fillText("Score: "+this.score, 8, 20);
     }
     this.drawLives = function(ctx, canvasWidth){
-        ctx.font = "16px ComicSansMS";
+        ctx.font = "18px Bangers";
         ctx.fillStyle = "#FFFFFF";
         ctx.fillText("Lives: "+this.lives, canvasWidth-65, 20);
     }
