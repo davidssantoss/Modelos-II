@@ -8,11 +8,12 @@ def index(request):
 
 def register(request):
     if (request.method == 'POST'):
-        if (models.Player.objects.filter(pk = request.POST['username'] ).exists()):
+        if (Player.objects.filter(pk = request.POST['username'] ).exists()):
             return render(request, 'games_platform/register.html', {'error_message':'el usuario ya existe'})
         else:
-            models.Player(username = request.POST['username'], name = request.POST['name'], last_name = request.POST['last_name']).save()
-            return render(request, 'games_platform/menu.html')
+            Player(username = request.POST['username'], name = request.POST['name'], last_name = request.POST['last_name']).save()
+            contexto = {'game_list':Game.objects.order_by('name')}
+            return render(request, "games_platform/menu.html", contexto)
     else:
         return render(request, 'games_platform/register.html')
 
