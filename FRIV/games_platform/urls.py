@@ -3,13 +3,9 @@ from django.urls import path
 from . import views
 
 app_name = 'games_platform'
-urlpatterns = [    
-<<<<<<< HEAD
-    path(' ', views.index, name='index'),
-=======
+urlpatterns = [
     path('', views.index, name='index'),
     path('menu', views.MenuView.as_view(), name = 'menu'),
->>>>>>> 7eb72ee43257a5ee42d1e0b26cddb2cb16d90896
     path('register', views.register, name = 'register'),
     path('login', views.login, name = 'login'),
     path('Arkanoid', views.arkanoid, name = 'arkanoid'),
