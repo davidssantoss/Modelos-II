@@ -8,24 +8,21 @@ def index(request):
 
 def register(request):
     if (request.method == 'POST'):
-        if (Player.objects.filter(pk = request.POST['username'] ).exists()):
-            return render(request, 'games_platform/register.html', {'error_message':'el usuario ya existe'})
-        else:
-            Player(username = request.POST['username'], name = request.POST['name'], last_name = request.POST['last_name']).save()
-            contexto = {'game_list':Game.objects.order_by('name')}
-            return render(request, "games_platform/menu.html", contexto)
+        if Player.objects.filter(pk = request.POST['username']).exists():            
+            return render(request, 'games_platform/register.html', {'error_message':'el usuario ya existe'.upper()})
+        else:            
+            Player(username = request.POST['username'], name = request.POST['name'], last_name = request.POST['last_name']).save()            
+            return render(request, "games_platform/menu.html", {'game_list':Game.objects.order_by('name')})
     else:
         return render(request, 'games_platform/register.html')
 
 
 def login(request):
-    if (request.method == 'POST'):
-        usernameDB = request.POST['username']
-        if (Player.objects.filter(pk=usernameDB).exists()):
-            contexto = {'game_list':Game.objects.order_by('name')}
-            return render(request, "games_platform/menu.html", contexto)
+    if (request.method == 'POST'):        
+        if (Player.objects.filter(pk=request.POST['username']).exists()):            
+            return render(request, "games_platform/menu.html", {'game_list':Game.objects.order_by('name')})
         else:
-            return render(request, 'games_platform/login.html', {'error_message': 'el usuario no esta registrado'})
+            return render(request, 'games_platform/login.html', {'error_message': 'el usuario no esta registrado'.upper()})
     else:
         return render(request, 'games_platform/login.html')
 

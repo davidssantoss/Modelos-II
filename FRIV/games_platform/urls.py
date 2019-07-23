@@ -4,10 +4,10 @@ from . import views
 
 app_name = 'games_platform'
 urlpatterns = [
-    path('', views.index, name='index'),
-    path('menu', views.MenuView.as_view(), name = 'menu'),
-    path('register', views.register, name = 'register'),
+    path('', views.index, name='index'),    
+    path('register', views.register, name = 'register'),   
     path('login', views.login, name = 'login'),
+    path('menu', views.MenuView.as_view(), name = 'menu'),    
     path('Arkanoid', views.arkanoid, name = 'arkanoid'),
     path('CarGame', views.car_game, name = 'car_game'),
     path('Chicken', views.chicken, name = 'chicken'),
