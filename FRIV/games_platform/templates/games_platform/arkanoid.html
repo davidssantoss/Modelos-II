@@ -6,18 +6,18 @@
 	<meta name="description" content="Arkanoid">
 	<meta name="keywords" content="canvas colisiones">
     <meta name="author" content="Jorge Cortes">
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'games_platform/Arkanoid/style.css' %}">
     
     <title>Arkanoid</title>
-
-    <link rel="stylesheet" type="text/css" href="{% static 'Arkanoid/Styles/style.css'%}" media="screen">
     <style>
         @import url('https://fonts.googleapis.com/css?family=Bangers&display=swap');
     </style>
-    <script src="{% static 'Arkanoid/Scripts/jquery-1.11.0.min.js'%}"></script>
-    <script src="{% static 'Arkanoid/Scripts/ball.js'%}" language="JavaScript1.2"></script>
-    <script src="{% static 'Arkanoid/Scripts/paddle.js'%}" language="JavaScript1.2"></script>
-    <script src="{% static 'Arkanoid/Scripts/brick.js'%}" language="JavaScript1.2"></script>
-    <script src="{% static 'Arkanoid/Scripts/script.js'%}" language="JavaScript1.2"></script>
+    <script src=" {% static 'games_platform/Arkanoid/Scripts/jquery-1.11.0.min.js' %}"></script>
+    <script src="{% static 'games_platform/Arkanoid/Scripts/ball.js' %}" language="JavaScript1.2"></script>
+    <script src="{% static 'games_platform/Arkanoid/Scripts/paddle.js' %}" language="JavaScript1.2"></script>
+    <script src="{% static 'games_platform/Arkanoid/Scripts/brick.js' %}" language="JavaScript1.2"></script>
+    <script src="{% static 'games_platform/Arkanoid/Scripts/script.js' %}" language="JavaScript1.2"></script>
 
 </head>
 <body>
