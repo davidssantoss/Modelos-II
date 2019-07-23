@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from django.http import HttpResponse
+from django.http import HttpResponse, HttpResponseRedirect
 from . import models
 
 def register(request):
@@ -12,3 +12,14 @@ def register(request):
             return render(request, 'games_platform/register.html')
     else:
         return render(request, 'games_platform/register.html')
+
+def login(request):
+    if (request.method == 'POST'):
+        usernameDB = request.POST['username']                        
+        if (models.Player.objects.filter(pk = usernameDB).exists()):
+            return HttpResponse('entrar a plataforma con %s registrado' % usernameDB)
+        else:
+            return render(request, 'games_platform/login.html', {'error_message': 'el usuario no esta registrado'})
+    else:
+        return render(request, 'games_platform/login.html')
+
