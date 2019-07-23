@@ -6,11 +6,11 @@
 		<meta name="description" content="Juego CrossyRoad">
 		<meta name="keywords" content="canvas colisiones jquery ajax">
 		<title>Crossy Road</title>
-		<link rel="stylesheet" type="text/css" href="{% static 'CrossyRoad/estilos/default.css' %}" media="screen">
-		<script src="{% static 'CrossyRoad/js/jquery-1.11.0.min.js' %}" language="JavaScript1.2"></script>
-		<script src="{% static 'CrossyRoad/js/gallina.js' %}" language="JavaScript1.2"></script>
-		<script src="{% static 'CrossyRoad/js/carro.js' %}" language="JavaScript1.2"></script>
-		<script src="{% static 'CrossyRoad/js/script.js' %}" language="JavaScript1.2"></script>
+		<link rel="stylesheet" type="text/css" href="{% static 'games_platform/CrossyRoad/estilos/default.css' %}" media="screen">
+		<script src="{% static 'games_platform/CrossyRoad/js/jquery-1.11.0.min.js' %}" language="JavaScript1.2"></script>
+		<script src="{% static 'games_platform/CrossyRoad/js/gallina.js' %}" language="JavaScript1.2"></script>
+		<script src="{% static 'games_platform/CrossyRoad/js/carro.js' %}" language="JavaScript1.2"></script>
+		<script src="{% static 'games_platform/CrossyRoad/js/script.js' %}" language="JavaScript1.2"></script>
 	</head>
 	<body>
 		<section>
@@ -21,10 +21,10 @@
 		<section>
 			<div id="popup" style="display: none;">
 				<div class="content-popup">
-					<div class="close"><a href="#" id="close"><img src="{% static 'CrossyRoad/imagenes/close.png' %}"/></a></div>
+					<div class="close"><a href="#" id="close"><img src="{% static 'games_platform/CrossyRoad/imagenes/close.png' %}"/></a></div>
 					<div>
 					   <h2>Teclas de juego</h2>
-					   <img src="{% static 'CrossyRoad/imagenes/teclado.png' %}"/>
+					   <img src="{% static 'games_platform/CrossyRoad/imagenes/teclado.png' %}"/>
 					   <h2>Creditos</h2>
 					   <p>Jorge Cortes, Laurent Chaverra, David Santos</p>
 						<p>Universidad Distrital</p>
@@ -37,16 +37,16 @@
 			<button id="iniciar">Iniciar</button>
 		</section>
 		<audio id="pierde">
-			<source src="{% static 'CrossyRoad/sonidos/pierde_vida.mp3' %}" type="audio/mpeg">
+			<source src="{% static 'games_platform/CrossyRoad/sonidos/pierde_vida.mp3' %}" type="audio/mpeg">
 			Tu navegador no es compatible
 		</audio>
 
-		<img id="abajo" src="{% static 'CrossyRoad/imagenes/gallinaDer.png'%}"/>
-		<img id="arriba" src="{% static 'CrossyRoad/imagenes/gallinaIzq.png'%}"/>
-		<img id="salto" src="{% static 'CrossyRoad/imagenes/gallinaDer.png'%}"/>
-		<img id="sentado" src="{% static 'CrossyRoad/imagenes/gallinaMuerta.png'%}"/>
-		<img id="carro_izq" src="{% static 'CrossyRoad/imagenes/carro1.png'%}"/>
-		<img id="carro_der" src="{% static 'CrossyRoad/imagenes/carro2.png'%}"/>
+		<img id="abajo" src="{% static 'games_platform/CrossyRoad/imagenes/gallinaDer.png'%}"/>
+		<img id="arriba" src="{% static 'games_platform/CrossyRoad/imagenes/gallinaIzq.png'%}"/>
+		<img id="salto" src="{% static 'games_platform/CrossyRoad/imagenes/gallinaDer.png'%}"/>
+		<img id="sentado" src="{% static 'games_platform/CrossyRoad/imagenes/gallinaMuerta.png'%}"/>
+		<img id="carro_izq" src="{% static 'games_platform/CrossyRoad/imagenes/carro1.png'%}"/>
+		<img id="carro_der" src="{% static 'games_platform/CrossyRoad/imagenes/carro2.png'%}"/>
 
 	</body>
 </html>
