@@ -5,7 +5,7 @@
 <head>
     <meta charset="utf-8" />
     <title>Menu</title>
-    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css'%}"/>
+    <link rel="stylesheet" href="{% static 'games_platform/Menu/Style/style.css'%}"/>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
     <script src="{% static 'js/bootstrap.min.js'%}"></script>
@@ -14,7 +14,7 @@
     <h1>Menu</h1>
     {% if game_list %}
         <label>Los juegos que hay son: </label>
-        <ul>
+        <ul class="lista">
         {% for game in game_list %}
             <li><a href="{{ game.name }}">{{ game.name }}</a></li>
         {% endfor %}
