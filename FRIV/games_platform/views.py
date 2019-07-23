@@ -2,6 +2,9 @@ from django.shortcuts import render
 from django.http import HttpResponse, HttpResponseRedirect
 from . import models
 
+def index(request):
+    return render(request, 'games_platform/index.html')
+
 def register(request):
     if (request.method == 'POST'):
         usernameDB = request.POST['username']                        
