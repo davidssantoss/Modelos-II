@@ -4,10 +4,11 @@ from . import models
 
 def register(request):
     if (request.method == 'POST'):
-        username = request.POST['username']
-        name = request.POST['name']
-        last_name = request.POST['last_name']        
-        player = models.Player.objects.filter(pk = username) 
-        print(player.exists())
-    return render(request, 'games_platform/register.html')
-    
+        usernameDB = request.POST['username']                        
+        if (models.Player.objects.filter(pk = usernameDB).exists()):
+            return render(request, 'games_platform/register.html', {'error_message':'el usuario ya existe'})
+        else:
+            models.Player(username = usernameDB, name = request.POST['name'], last_name = request.POST['last_name']).save()          
+            return render(request, 'games_platform/register.html')
+    else:
+        return render(request, 'games_platform/register.html')
