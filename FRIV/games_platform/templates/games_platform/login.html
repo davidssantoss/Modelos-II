@@ -18,8 +18,8 @@
 <form action="{% url 'games_platform:login' %}" method="post">
     {% csrf_token %}
     <div class="form-group">
-        <label for="username">Username: </label><br>
-        <input type="text" class="form-control" name="username" id="username" placeholder="Ingrese su username"><br>        
+        <label for="username"><strong>Username: </strong></label>
+        <input type="text" class="form-control" name="username" id="username" placeholder="Ingrese su usuario">
     </div>
     <input type="submit" class="btn-primary" value="INICIAR SESION">
 </form>

@@ -11,7 +11,8 @@ def register(request):
         if Player.objects.filter(pk = request.POST['username']).exists():            
             return render(request, 'games_platform/register.html', {'error_message':'el usuario ya existe'.upper()})
         else:            
-            Player(username = request.POST['username'], name = request.POST['name'], last_name = request.POST['last_name']).save()            
+            Player(username = request.POST['username'], name = request.POST['name'], last_name = request.POST['last_name']).save()
+            request.session['username'] = request.POST['username']
             return render(request, "games_platform/menu.html", {'game_list':Game.objects.order_by('name')})
     else:
         return render(request, 'games_platform/register.html')
@@ -19,7 +20,8 @@ def register(request):
 
 def login(request):
     if (request.method == 'POST'):        
-        if (Player.objects.filter(pk=request.POST['username']).exists()):            
+        if (Player.objects.filter(pk=request.POST['username']).exists()):
+            request.session['username'] = request.POST['username']
             return render(request, "games_platform/menu.html", {'game_list':Game.objects.order_by('name')})
         else:
             return render(request, 'games_platform/login.html', {'error_message': 'el usuario no esta registrado'.upper()})

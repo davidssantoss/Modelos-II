@@ -13,7 +13,7 @@
 <body>    
     <h1>Menu</h1>
     {% if game_list %}
-        <label>Los juegos que hay son: </label>
+        <label>Los juegos disponibles son: </label>
         <ul class="lista">
         {% for game in game_list %}
             <li><a href="{{ game.name }}">{{ game.name }}</a></li>

@@ -15,11 +15,11 @@
     <form action="{% url 'games_platform:register' %}" method="post" class="form">
         <div class="form-group">
             {% csrf_token %}
-            <label for="username">Username: </label><br>
+            <label for="username">Username: </label>
             <input type="text" class="form-control" name="username" id="username" placeholder="Ingrese su nombre de usuario"><br>
-            <label for="name">Nombre: </label><br>
+            <label for="name">Nombre: </label>
             <input type="text" class="form-control" name="name" id="name" placeholder="Ingrese su nombre"><br>
-            <label for="last_name">Apellido: </label><br>
+            <label for="last_name">Apellido: </label>
             <input type="text" class="form-control" name="last_name" id="last_name" placeholder="Ingrese su apellido"><br>
             <br><input type="submit" class="btn-primary" value="REGISTRARSE"><br>
         </div>

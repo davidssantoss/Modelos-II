@@ -1,1 +1,57 @@
-<h1>{{ game.name }}</h1>
+﻿{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="es">
+	<head>
+		<meta charset="utf-8">
+		<meta name="description" content="Juego llorona">
+		<meta name="keywords" content="canvas colisiones jquery ajax">
+		<meta name="author" content="Alejandro Daza">
+		<title>Snake</title>
+		
+		<link rel="stylesheet" type="text/css" href="{% static 'games_platform/Snake/estilos/default.css'%}" media="screen">
+		<script src="{% static 'games_platform/Snake/js/jquery-1.11.0.min.js'%}" language="JavaScript1.2"></script>
+		<script src="{% static 'games_platform/Snake/js/quica.js' %}" language="JavaScript1.2"></script>
+		<script src="{% static 'games_platform/Snake/js/calaca.js' %}" language="JavaScript1.2"></script>
+		<script src="{% static 'games_platform/Snake/js/script.js' %}" language="JavaScript1.2"></script>
+
+		
+		
+	</head>
+	<body>
+		<section>
+			<canvas id="mi_canvas" width="640" height="480">
+				Tu navegador no es compatible
+			</canvas>			
+		</section>
+		<section>
+			<div id="popup" style="display: none;">
+				<div class="content-popup">
+					<div class="close"><a href="#" id="close"><img src="{% static 'games_platform/Snake/imagenes/close.png"'%}"/></a></div>
+					<div>
+					   <h2>Teclas de juego</h2>
+					   <img src="imagenes/teclado.png"/>
+					   <h2>Creditos</h2>
+					   <p>Kevin Malaver</p>
+						<p>Universidad Distrital</p>
+						<p>Ingenieria de Sistemas</p>
+					</div>
+				</div>
+			</div>
+			<h1>Snake</h1>
+			<button id="instrucciones">Ver Instrucciones</button><br>
+			<button id="iniciar">Iniciar</button>
+		</section>
+		<audio id="pierde">
+			<source src="{% static 'games_platform/Snake/sonidos/Fondo.ogg'%}" type="audio/ogg">
+			<source src="{% static 'games_platform/Snake/sonidos/Fondo.mp3'%}" type="audio/mpeg">
+			<source src="{% static 'games_platform/Snake/sonidos/Fondo.wav'%}" type="audio/wav">
+			Tu navegador no es compatible
+		</audio>		
+		<img id="abajo" src="{% static 'games_platform/Snake/imagenes/snake.png'%}"/>
+		<img id="arriba" src="{% static 'games_platform/Snake/imagenes/snake.png'%}"/>
+		<img id="salto" src="{% static 'games_platform/Snake/imagenes/snake.png'%}"/>
+		<img id="sentado" src="{% static 'games_platform/Snake/imagenes/snake.png'%}"/>
+		<img id="calaca_1" src="{% static 'games_platform/Snake/imagenes/manzana.png'%}"/>
+		<img id="calaca_2" src="{% static 'games_platform/Snake/imagenes/carro2.png'%}"/>				
+	</body>
+</html>

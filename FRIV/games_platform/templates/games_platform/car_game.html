@@ -1,1 +1,26 @@
-<h1>{{ game.name }}</h1>
+﻿{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Road Fighter UD</title>
+    <link rel="stylesheet" type="text/css" href="{%static 'games_platform/CarGame/styles/style.css' %}">
+    <script src="{% static 'games_platform/CarGame/scripts/engine.js' %}"></script>
+    <script src="{% static 'games_platform/CarGame/scripts/board.js' %}"></script>
+    <script src="{% static 'games_platform/CarGame/scripts/car.js' %}"></script>
+    <script src="{% static 'games_platform/CarGame/scripts/controls.js' %}"></script>
+    <script src="{% static 'games_platform/CarGame/scripts/game.js'%}"></script>
+    <script src="{% static 'games_platform/CarGame/scripts/board-objects.js'%}"></script>
+</head>
+
+<body onload="main()">
+    <canvas id="gameBoard" width="1450" height="620"></canvas>
+    <button id="again" onclick="restart()">Again!</button>
+    <div id="scoreContainer">
+        <div id="score">
+            0
+        </div>
+    </div>
+</body>
+</html>
