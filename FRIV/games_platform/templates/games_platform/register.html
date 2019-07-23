@@ -1,4 +1,4 @@
-{% load staticfiles %}
+﻿{% load staticfiles %}
 <!DOCTYPE html>
 
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml">
@@ -15,14 +15,16 @@
     <p><strong>{{ error_message }}</strong></p>
     {% endif %}
     <form action="{% url 'games_platform:register' %}" method="post">
-        {% csrf_token %}
-        <label for="username">username: </label>
-        <input type="text" name="username" id="username"><br>
-        <label for="name">nombre: </label>
-        <input type="text" name="name" id="name"><br>
-        <label for="last_name">apellido: </label>
-        <input type="text" name="last_name" id="last_name"><br>
-        <input type="submit" value="registrarse">
+        <div class="form-group">
+            {% csrf_token %}
+            <label for="username">Username: </label>
+            <input type="text" class="form-control" name="username" id="username" placeholder="Ingrese su Username">
+            <label for="name">Nombre: </label>
+            <input type="text" class="form-control" name="name" id="name" placeholder="Ingrese su nombre">
+            <label for="last_name">Apellido: </label>
+            <input type="text" class="form-control" name="last_name" id="last_name" placeholder="Ingrese su apellido">            
+        </div>
+        <input type="submit" class="btn btn-primary" value="REGISTRARSE">
     </form>
 </body>
 </html>
