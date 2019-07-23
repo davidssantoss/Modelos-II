@@ -3,7 +3,7 @@ from django.urls import path
 from . import views
 
 app_name = 'games_platform'
-urlpatterns = [    
+urlpatterns = [
     path('', views.index, name='index'),
     path('menu', views.MenuView.as_view(), name = 'menu'),
     path('register', views.register, name = 'register'),

@@ -47,9 +47,18 @@
     <Compile Include="FRIV\wsgi.py" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="games_platform\templates\games_platform\arkanoid.html" />
+    <Content Include="games_platform\templates\games_platform\car_game.html" />
+    <Content Include="games_platform\templates\games_platform\chicken.html" />
+    <Content Include="games_platform\templates\games_platform\crossyroad.html" />
+    <Content Include="games_platform\templates\games_platform\head_game.html" />
     <Content Include="games_platform\templates\games_platform\index.html" />
     <Content Include="games_platform\templates\games_platform\login.html" />
+    <Content Include="games_platform\templates\games_platform\menu.html" />
+    <Content Include="games_platform\templates\games_platform\penguin.html" />
     <Content Include="games_platform\templates\games_platform\register.html" />
+    <Content Include="games_platform\templates\games_platform\ship_game.html" />
+    <Content Include="games_platform\templates\games_platform\snake.html" />
     <Content Include="requirements.txt" />
   </ItemGroup>
   <ItemGroup>
