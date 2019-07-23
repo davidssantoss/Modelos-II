@@ -1,0 +1,10 @@
+{% if game_list %}
+    <label>Los juegos que hay son: </label>
+    <ul>
+    {% for game in game_list %}
+        <li><a href="{{ game.name }}">{{ game.name }}</a></li>
+    {% endfor %}
+    </ul>
+{% else %}
+    <p>No polls are available.</p>
+{% endif %}
