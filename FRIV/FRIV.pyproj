@@ -47,6 +47,7 @@
     <Compile Include="FRIV\wsgi.py" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="games_platform\templates\games_platform\index.html" />
     <Content Include="games_platform\templates\games_platform\login.html" />
     <Content Include="games_platform\templates\games_platform\register.html" />
     <Content Include="requirements.txt" />

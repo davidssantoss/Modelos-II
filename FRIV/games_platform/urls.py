@@ -4,6 +4,7 @@ from . import views
 
 app_name = 'games_platform'
 urlpatterns = [    
+<<<<<<< HEAD
     path('', views.MenuView.as_view(), name = 'menu'),
     path('register', views.register, name = 'register'),
     path('login', views.login, name = 'login'),
@@ -15,4 +16,9 @@ urlpatterns = [
     path('Penguin', views.penguin, name = 'Penguin'),
     path('ShipGame', views.ship_game, name = 'ship_game'),
     path('Snake', views.snake, name = 'snake'),
+=======
+    path('', views.index, name='index'),
+    path('register', views.register, name = 'register'),
+    path('login', views.login, name = 'login')    
+>>>>>>> a5273641eb0a526bb14c2b072e3a32ee04a71790
 ]
